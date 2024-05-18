@@ -1,0 +1,137 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Jobs</title>
+    <style>
+    body {
+        background-color: #f2f2f2; /* Light gray background */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0 20px; /* Add horizontal padding */
+    }
+
+    form {
+        background-color: skyblue; /* Adjusted color name */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Make the form width 100% */
+        max-width: 500px; /* Limit the max width of the form */
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    select,
+    textarea,
+    input[type="date"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: black; /* Green */
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <form onsubmit="return validateForm()">
+        <h1>Apply for Jobs</h1>
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state" required><br><br>
+        <label for="zip">ZIP:</label><br>
+        <input type="number" id="zip" name="zip" required><br><br>
+        <label for="country">Country:</label><br>
+        <select id="country" name="country" required>
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+        </select><br><br>
+        <label for="education_level">Education Level:</label><br>
+        <select id="education_level" name="education_level" required>
+            <option value="">Select Education Level</option>
+            <option value="Graduate">Graduate</option>
+            <option value="PostGraduate">PostGraduate</option>
+            <option value="Doctorate">Doctorate</option>
+        </select><br><br>
+        <label for="education_type">Education Type:</label><br>
+        <select id="education_type" name="education_type" required>
+            <option value="">Select Education Type</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="FINANCE">FINANCE</option>
+        </select><br><br>
+        <label for="resume">Resume:</label><br>
+        <input type="file" id="resume" name="resume" required><br><br>
+        <label for="cover_letter">Cover Letter:</label><br>
+        <textarea id="cover_letter" name="cover_letter"></textarea><br><br>
+        <label for="employed">Are you currently employed?</label>
+        <input type="checkbox" id="employed" name="employed"><br><br>
+        <div id="employment_details" style="display: none;">
+            <label for="current_employer">Current Employer:</label><br>
+            <input type="text" id="current_employer" name="current_employer"><br><br>
+            <label for="years_experience">Years of Experience:</label><br>
+            <input type="number" id="years_experience" name="years_experience"><br><br>
+        </div>
+        <label for="jobs_apply">Jobs to Apply:</label><br>
+        <select id="jobs_apply" name="jobs_apply[]" multiple required>
+            <!-- Add options for jobs -->
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        // JavaScript validation code goes here
+        return true; // Return false if validation fails
+    }
+</script>
+</body>
+</html>
+        
